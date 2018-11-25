@@ -54,4 +54,13 @@ public class StudentController {
             return ResponseEntity.noContent().build();
         }
     }
+    @GetMapping(path="/all")
+    public ResponseEntity getAllStudents(){
+        try{
+            return ResponseEntity.ok(studentService.findAllStudents());
+        }
+        catch(Exception e){
+            return ResponseEntity.noContent().build();
+        }
+    }
 }
