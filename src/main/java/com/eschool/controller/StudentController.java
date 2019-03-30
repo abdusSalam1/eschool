@@ -1,6 +1,7 @@
 package com.eschool.controller;
 
 import com.eschool.domain.student.Student;
+import com.eschool.model.StudentModel;
 import com.eschool.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
@@ -53,5 +54,10 @@ public class StudentController {
         } catch (Exception ex){
             return ResponseEntity.noContent().build();
         }
+    }
+
+    @GetMapping
+    public ResponseEntity get() {
+      return ResponseEntity.ok("Helo this is boot");
     }
 }

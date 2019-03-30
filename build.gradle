@@ -28,4 +28,5 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-hateoas')
+    compile(group: 'org.projectlombok', name: 'lombok', version: '1.18.6')
 }

@@ -2,10 +2,12 @@ package com.eschool.domain.student;
 
 import com.eschool.domain.Entity;
 import com.eschool.domain.parent.Parent;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by Abdus Salam on 8/24/2018.
@@ -13,39 +15,24 @@ import java.util.List;
 @Document(collection = "student")
 public class Student extends Entity {
 
-    private String name;
-    private String cnic;
-    private String enrollmentNumber;
-    private List<StudentClass> classes;
-    private List<Parent> parents;
-    private List<StudentFee> fees;
-    private boolean active;
+    private final String name;
+    private final String cnic;
+    private final String enrollmentNumber;
+    private final List<StudentClass> classes;
+    private final List<Parent> parents;
+    private final List<StudentFee> fees;
+    private final boolean active;
 
-    public Student() {
+    @PersistenceConstructor
+    public Student(String name, String cnic, String enrollmentNumber, List<StudentClass> classes,
+                   List<Parent> parents, List<StudentFee> fees, boolean active) {
         super();
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCnic() {
-        return cnic;
-    }
-
-    public void setCnic(String cnic) {
         this.cnic = cnic;
-    }
-
-    public void addClass(StudentClass studentClass) {
-        if (this.classes == null) {
-            this.classes = new ArrayList<>();
-        }
-        this.classes.add(studentClass);
+        this.enrollmentNumber = enrollmentNumber;
+        this.classes = classes;
+        this.parents = parents;
+        this.fees = fees;
+        this.active = active;
     }
 }
