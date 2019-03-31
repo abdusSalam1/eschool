@@ -8,7 +8,7 @@ import java.util.UUID;
  */
 public class Father extends Parent {
 
-    public Father(UUID id, String name, String cnic, String occupation, Double monthlySalary, List<String> contactNumbers, String address) {
-        super(id, name, cnic, occupation, monthlySalary, contactNumbers, address);
+    public Father(String name, String cnic, String occupation, Double monthlySalary, List<String> contactNumbers, String address) {
+        super(name, cnic, occupation, monthlySalary, contactNumbers, address);
     }
 }

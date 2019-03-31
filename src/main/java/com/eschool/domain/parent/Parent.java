@@ -4,7 +4,6 @@ import com.eschool.domain.Entity;
 import lombok.Getter;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Abdus Salam on 9/2/2018.
@@ -19,8 +18,8 @@ public abstract class Parent extends Entity {
     private List<String> contactNumbers;
     private String address;
 
-    public Parent(UUID id, String name, String cnic, String occupation, Double monthlySalary, List<String> contactNumbers, String address) {
-        super(id);
+    protected Parent(String name, String cnic, String occupation, Double monthlySalary, List<String> contactNumbers, String address) {
+        super();
         this.name = name;
         this.cnic = cnic;
         this.occupation = occupation;

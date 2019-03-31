@@ -1,5 +1,6 @@
 package com.eschool.model.parent;
 
+import com.eschool.domain.parent.Parent;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Getter;
@@ -25,4 +26,6 @@ public abstract class ParentModel {
     private Double monthlySalary;
     private List<String> contactNumbers;
     private String address;
+
+    public abstract Parent toParent();
 }

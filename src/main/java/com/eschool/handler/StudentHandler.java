@@ -3,7 +3,7 @@ package com.eschool.handler;
 import com.eschool.domain.student.Student;
 import com.eschool.model.StudentModel;
 import com.eschool.service.StudentService;
-import com.eschool.transformer.StudentModelTransformer;
+import com.eschool.transformer.StudentTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,18 +15,18 @@ import java.util.UUID;
 public class StudentHandler {
 
     private final StudentService studentService;
-    private final StudentModelTransformer studentModelTransformer;
+    private final StudentTransformer studentTransformer;
 
     @Autowired
-    public StudentHandler(StudentService studentService, StudentModelTransformer studentModelTransformer) {
+    public StudentHandler(StudentService studentService, StudentTransformer studentTransformer) {
         this.studentService = studentService;
-        this.studentModelTransformer = studentModelTransformer;
+        this.studentTransformer = studentTransformer;
     }
 
     public ResponseEntity addStudent(StudentModel studentModel) {
         try {
             //  Link uri = linkTo(methodOn(StudentController.class).getStudent(studentModel.getId().toString())).withRel("self");
-            studentService.addStudent(studentModelTransformer.transform(studentModel));
+            studentService.addStudent(studentTransformer.transform(studentModel));
             return new ResponseEntity(HttpStatus.CREATED);
         } catch (Exception ex) {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
@@ -36,7 +36,7 @@ public class StudentHandler {
     public ResponseEntity updateStudent(StudentModel studentModel) {
         try {
             //  Link uri = linkTo(methodOn(StudentController.class).getStudent(student.getId().toString())).withRel("self");
-            studentService.updateStudent(studentModelTransformer.transform(studentModel));
+            studentService.updateStudent(studentTransformer.transform(studentModel));
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception ex) {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
