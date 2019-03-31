@@ -5,7 +5,7 @@ package com.eschool.domain.fee;
  */
 public class Transaction {
 
-    private Double monthlyFee;
+    private Double fee;
     private Double admissionFee;
     private Double printingFee;
 }

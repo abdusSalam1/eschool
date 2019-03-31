@@ -3,7 +3,6 @@ package com.eschool.domain.student;
 import com.eschool.domain.Entity;
 import com.eschool.domain.classInfo.StudentClass;
 import com.eschool.domain.fee.FeeFrequency;
-import com.eschool.domain.fee.Transaction;
 import com.eschool.domain.parent.Parent;
 import lombok.Builder;
 import org.springframework.data.annotation.PersistenceConstructor;
@@ -24,7 +23,6 @@ public class Student extends Entity {
     private final List<Parent> parents;
     private List<StudentClass> classes;
     private FeeFrequency feeFrequency;
-    private List<Transaction> transactions;
     private boolean active;
 
     @PersistenceConstructor
