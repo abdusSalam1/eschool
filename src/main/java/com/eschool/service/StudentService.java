@@ -2,6 +2,7 @@ package com.eschool.service;
 
 import com.eschool.domain.student.Student;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
@@ -15,4 +16,6 @@ public interface StudentService {
     void updateStudent(Student student) throws NoSuchElementException;
 
     Student findByStudentId(UUID id);
+
+    List<Student> findAllStudents();
 }

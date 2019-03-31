@@ -28,7 +28,7 @@ public class StudentController {
         try {
             //    Link uri = linkTo(methodOn(StudentController.class).getStudent(student.getId().toString())).withRel("self");
             //  studentService.addStudent(student);
-          //  return new ResponseEntity(uri, HttpStatus.CREATED);
+            //  return new ResponseEntity(uri, HttpStatus.CREATED);
             return null;
         } catch (Exception ex) {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
@@ -56,8 +56,12 @@ public class StudentController {
         }
     }
 
-    @GetMapping
-    public ResponseEntity get() {
-        return ResponseEntity.ok("Helo this is boot");
+    @GetMapping(path = "/all")
+    public ResponseEntity getAllStudents() {
+        try {
+            return ResponseEntity.ok(studentService.findAllStudents());
+        } catch (Exception e) {
+            return ResponseEntity.noContent().build();
+        }
     }
 }
