@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class StudentClassModel {
+public class ClassModel {
 
     private String name;
     private String sectionName;

@@ -1,7 +1,7 @@
 package com.eschool.controller;
 
 import com.eschool.handler.ClassHandler;
-import com.eschool.model.StudentClassModel;
+import com.eschool.model.ClassModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,9 +13,8 @@ public class ClassController {
     @Autowired
     private ClassHandler classHandler;
 
-
     @PostMapping
-    public ResponseEntity addClass(StudentClassModel studentClassModel){
-        return classHandler.addClass(studentClassModel);
+    public ResponseEntity addClass(ClassModel classModel){
+        return classHandler.addClass(classModel);
     }
 }

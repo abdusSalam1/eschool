@@ -17,5 +17,6 @@ public class StudentModel {
     private List<ParentModel> parents;
     private boolean active;
     private String feeFrequency;
-    private StudentClassModel studentClass;
+    private String className;
+    private String sectionName;
 }

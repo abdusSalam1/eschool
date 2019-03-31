@@ -1,6 +1,6 @@
 package com.eschool.handler;
 
-import com.eschool.model.StudentClassModel;
+import com.eschool.model.ClassModel;
 import com.eschool.service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ public class ClassHandler {
     @Autowired
     private ClassService classService;
 
-    public ResponseEntity addClass(StudentClassModel studentClassModel) {
+    public ResponseEntity addClass(ClassModel classModel) {
         try {
             //  Link uri = linkTo(methodOn(StudentController.class).getStudent(studentModel.getId().toString())).withRel("self");
             classService.addClass(null);
