@@ -9,6 +9,7 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
+
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -28,4 +29,5 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-hateoas')
     compile(group: 'org.projectlombok', name: 'lombok', version: '1.18.6')
+    annotationProcessor ('org.projectlombok:lombok:1.18.6')
 }
