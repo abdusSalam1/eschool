@@ -1,38 +1,41 @@
 package com.eschool.domain.student;
 
 import com.eschool.domain.Entity;
+import com.eschool.domain.classInfo.StudentClass;
+import com.eschool.domain.fee.FeeFrequency;
+import com.eschool.domain.fee.Transaction;
 import com.eschool.domain.parent.Parent;
+import lombok.Builder;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Abdus Salam on 8/24/2018.
  */
 @Document(collection = "student")
+@Builder
 public class Student extends Entity {
 
     private final String name;
     private final String cnic;
     private final String enrollmentNumber;
-    private final List<StudentClass> classes;
     private final List<Parent> parents;
-    private final List<StudentFee> fees;
-    private final boolean active;
+    private List<StudentClass> classes;
+    private FeeFrequency feeFrequency;
+    private List<Transaction> transactions;
+    private boolean active;
 
     @PersistenceConstructor
-    public Student(String name, String cnic, String enrollmentNumber, List<StudentClass> classes,
-                   List<Parent> parents, List<StudentFee> fees, boolean active) {
+    private Student(String name, String cnic, String enrollmentNumber, List<StudentClass> studentClasses,
+                    List<Parent> parents, boolean active) {
         super();
         this.name = name;
         this.cnic = cnic;
         this.enrollmentNumber = enrollmentNumber;
-        this.classes = classes;
         this.parents = parents;
-        this.fees = fees;
+        this.classes = studentClasses;
         this.active = active;
     }
 }

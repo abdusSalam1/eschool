@@ -5,8 +5,13 @@ package com.eschool.domain.fee;
  */
 public class Discount {
 
-    private double monthlyDiscount;
-    private double admissionDiscount;
-    private double printingFeeDiscount;
-    private double otherDiscount;
+    private final double monthlyDiscount;
+    private final double admissionDiscount;
+    private final double printingFeeDiscount;
+
+    public Discount(double monthlyDiscount, double admissionDiscount, double printingFeeDiscount) {
+        this.monthlyDiscount = monthlyDiscount;
+        this.admissionDiscount = admissionDiscount;
+        this.printingFeeDiscount = printingFeeDiscount;
+    }
 }

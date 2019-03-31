@@ -17,19 +17,19 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 /**
  * Created by Abdus Salam on 8/24/2018.
  */
-@RestController
-@RequestMapping(value = "/students")
+@RestController(value = "/students")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
     @PostMapping
-    public ResponseEntity saveStudent(@RequestBody Student student) {
+    public ResponseEntity addStudent(@RequestBody StudentModel studentModel) {
         try {
-            Link uri = linkTo(methodOn(StudentController.class).getStudent(student.getId().toString())).withRel("self");
-            studentService.addStudent(student);
-            return new ResponseEntity(uri, HttpStatus.CREATED);
+            //    Link uri = linkTo(methodOn(StudentController.class).getStudent(student.getId().toString())).withRel("self");
+            //  studentService.addStudent(student);
+          //  return new ResponseEntity(uri, HttpStatus.CREATED);
+            return null;
         } catch (Exception ex) {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
@@ -49,15 +49,15 @@ public class StudentController {
     @GetMapping(path = "/{studentId}")
     public ResponseEntity getStudent(@PathVariable String studentId) {
         try {
-           Student student = studentService.findByStudentId(UUID.fromString(studentId));
+            Student student = studentService.findByStudentId(UUID.fromString(studentId));
             return ResponseEntity.ok(student);
-        } catch (Exception ex){
+        } catch (Exception ex) {
             return ResponseEntity.noContent().build();
         }
     }
 
     @GetMapping
     public ResponseEntity get() {
-      return ResponseEntity.ok("Helo this is boot");
+        return ResponseEntity.ok("Helo this is boot");
     }
 }
