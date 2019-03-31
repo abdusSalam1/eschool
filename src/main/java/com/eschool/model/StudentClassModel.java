@@ -1,16 +1,12 @@
 package com.eschool.model;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class StudentClassModel {
 
     private String name;
-    private String startDate;
-    private String endDate;
     private String sectionName;
 }
