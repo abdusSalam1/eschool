@@ -4,10 +4,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.multipart.MultipartFile;
 
 @Configuration
-public class FeeDelegate {
+public class FeeChallanDelegate {
 
 
-    public void generateFeeReportByFile(MultipartFile file) {
+    public void generateFeeChallanByFile(MultipartFile file) {
 
     }
 }
