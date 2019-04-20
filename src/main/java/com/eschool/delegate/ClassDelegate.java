@@ -1,4 +1,4 @@
-package com.eschool.handler;
+package com.eschool.delegate;
 
 import com.eschool.model.ClassModel;
 import com.eschool.service.ClassService;
@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 @Configuration
-public class ClassHandler {
+public class ClassDelegate {
 
     @Autowired
     private ClassService classService;

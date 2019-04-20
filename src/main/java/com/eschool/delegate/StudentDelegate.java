@@ -1,4 +1,4 @@
-package com.eschool.handler;
+package com.eschool.delegate;
 
 import com.eschool.domain.student.Student;
 import com.eschool.model.StudentModel;
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class StudentHandler {
+public class StudentDelegate {
 
     private final StudentService studentService;
     private final StudentTransformer studentTransformer;
 
     @Autowired
-    public StudentHandler(StudentService studentService, StudentTransformer studentTransformer) {
+    public StudentDelegate(StudentService studentService, StudentTransformer studentTransformer) {
         this.studentService = studentService;
         this.studentTransformer = studentTransformer;
     }

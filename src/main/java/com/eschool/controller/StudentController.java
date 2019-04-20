@@ -1,6 +1,6 @@
 package com.eschool.controller;
 
-import com.eschool.handler.StudentHandler;
+import com.eschool.delegate.StudentDelegate;
 import com.eschool.model.StudentModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,25 +15,25 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 public class StudentController {
 
     @Autowired
-    private StudentHandler studentHandler;
+    private StudentDelegate studentDelegate;
 
     @PostMapping
     public ResponseEntity addStudent(@RequestBody StudentModel studentModel) {
-        return studentHandler.addStudent(studentModel);
+        return studentDelegate.addStudent(studentModel);
     }
 
     @PutMapping
     public ResponseEntity updateStudent(@RequestBody StudentModel studentModel) {
-       return studentHandler.updateStudent(studentModel);
+       return studentDelegate.updateStudent(studentModel);
     }
 
     @GetMapping(path = "/{studentId}")
     public ResponseEntity getStudent(@PathVariable String studentId) {
-       return studentHandler.getStudent(studentId);
+       return studentDelegate.getStudent(studentId);
     }
 
     @GetMapping
     public ResponseEntity getAllStudents() {
-        return studentHandler.getAllStudents();
+        return studentDelegate.getAllStudents();
     }
 }
