@@ -11,7 +11,6 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 /**
  * Created by Abdus Salam on 8/24/2018.
  */
-@RestController(value = "/students")
 public class StudentController {
 
     @Autowired

@@ -1,12 +1,10 @@
 package com.eschool.domain.challan;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Getter
 @Builder
+@AllArgsConstructor
 public class FeeChallanData {
 
     private String studentName;

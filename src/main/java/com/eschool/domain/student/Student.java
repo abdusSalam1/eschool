@@ -4,6 +4,7 @@ import com.eschool.domain.Entity;
 import com.eschool.domain.classInfo.StudentClass;
 import com.eschool.domain.fee.FeeFrequency;
 import com.eschool.domain.parent.Parent;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.data.annotation.PersistenceConstructor;
@@ -17,6 +18,7 @@ import java.util.List;
 @Document(collection = "student")
 @Builder
 @Getter
+@AllArgsConstructor
 public class Student extends Entity {
 
     private final String name;
